@@ -85,6 +85,10 @@ function addTask(description, taskElement) {
   deleteButton.onclick = function () {
     deleteTask(this);
   };
+  deleteButton.addEventListener("dragover", allowDrop);
+  deleteButton.addEventListener("drop", function () {
+    deleteButton.click();
+  });
 
   // input
   const newInput = document.createElement("input");
