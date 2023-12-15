@@ -43,6 +43,7 @@ function allowDrop(ev) {
   ev.preventDefault();
   ev.target.style.height = "45px";
 }
+
 // ondragout
 function dragOut(ev) {
   // ev.preventDefault();
@@ -50,6 +51,18 @@ function dragOut(ev) {
 }
 
 function drop(ev) {
+  console.dir(ev.target.nodeName);
+  console.dir(ev.target.parentNode.id);
+  console.dir(ev.dataTransfer.getData("text"));
+
+  if (
+    ev.target.nodeName == "BUTTON" &&
+    ev.target.parentNode.id == ev.dataTransfer.getData("text")
+  ) {
+    ev.target.click();
+    return;
+  }
+
   ev.target.style.height = null;
   let elementToDrop = document.getElementById(ev.dataTransfer.getData("text"));
   let elementToDropOn = ev.target.parentNode;
@@ -85,10 +98,10 @@ function addTask(description, taskElement) {
   deleteButton.onclick = function () {
     deleteTask(this);
   };
-  deleteButton.addEventListener("dragover", allowDrop);
-  deleteButton.addEventListener("drop", function () {
-    deleteButton.click();
-  });
+  // deleteButton.addEventListener("dragover", allowDrop);
+  //   deleteButton.addEventListener("drop", function () {
+  //     deleteButton.click();
+  //   });
 
   // input
   const newInput = document.createElement("input");
