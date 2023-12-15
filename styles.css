@@ -62,7 +62,7 @@ h1 {
 }
 
 .task {
-  width: 93%;
+  width: 90%;
   background-color: darkgray;
 }
 
@@ -73,5 +73,5 @@ button.action {
 button.task-bt {
   margin-left: 5px;
   cursor: pointer;
-  width: 5%;
+  width: fit-content;
 }

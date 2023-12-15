@@ -81,11 +81,10 @@ function addTask(description, taskElement) {
   // delete button
   const deleteButton = document.createElement("button");
   deleteButton.className = "task-bt";
-  deleteButton.textContent = "מחק";
+  deleteButton.textContent = "-";
   deleteButton.onclick = function () {
     deleteTask(this);
   };
-  newTaskContainter.appendChild(deleteButton);
 
   // input
   const newInput = document.createElement("input");
@@ -98,6 +97,7 @@ function addTask(description, taskElement) {
   if (description) {
     newInput.value = description;
   }
+  newTaskContainter.appendChild(deleteButton);
   newTaskContainter.appendChild(newInput);
 
   if (taskElement) {
