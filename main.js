@@ -93,8 +93,8 @@ function addTask(description, taskElement) {
 
   // delete button
   const deleteButton = document.createElement("button");
-  deleteButton.className = "task-bt";
-  deleteButton.textContent = "-";
+  deleteButton.className = "delete-bt";
+  deleteButton.textContent = "מחק";
   deleteButton.onclick = function () {
     deleteTask(this);
   };
@@ -105,7 +105,7 @@ function addTask(description, taskElement) {
 
   // input
   const newInput = document.createElement("input");
-  newInput.className = "task";
+  newInput.className = "task-input";
   newInput.type = "text";
   newInput.autocomplete = "off";
   newInput.placeholder = "הכנס משימה";

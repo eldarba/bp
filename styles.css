@@ -29,6 +29,7 @@ footer {
 main {
   height: 100%;
   overflow: auto;
+  padding: 5px;
 }
 main input,
 main button {
@@ -55,14 +56,22 @@ footer {
 h1 {
   margin: 0;
 }
+
 .task-container {
-  margin-bottom: 5px;
-  margin-top: 5px;
+  /* margin-bottom: 5px;
+  margin-top: 5px; */
   cursor: move;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding: 1px;
 }
 
-.task {
-  width: 90%;
+.task-input {
+  /* width: 90%; */
+  flex-grow: 10;
   background-color: darkgray;
 }
 
@@ -70,8 +79,10 @@ button.action {
   margin: 5px;
   cursor: pointer;
 }
-button.task-bt {
+.delete-bt {
   margin-left: 5px;
   cursor: pointer;
-  width: fit-content;
+  /* width: 5%; */
+  flex-grow: 1;
+  background-color: red;
 }
