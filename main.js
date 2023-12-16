@@ -95,6 +95,7 @@ function addTask(description, taskElement) {
   const deleteButton = document.createElement("button");
   deleteButton.className = "delete-bt";
   deleteButton.textContent = "מחק";
+  deleteButton.title = "לחץ למחיקה";
   deleteButton.onclick = function () {
     deleteTask(this);
   };
@@ -109,6 +110,7 @@ function addTask(description, taskElement) {
   newInput.type = "text";
   newInput.autocomplete = "off";
   newInput.placeholder = "הכנס משימה";
+  newInput.title = "הזז למטה או למעלה";
   newInput.onkeydown = "handleKeyPress";
   newInput.addEventListener("keyup", handleKeyPress);
   if (description) {
