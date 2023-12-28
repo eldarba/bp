@@ -34,17 +34,19 @@ function deleteTask(button) {
   // save done task history
   const the_input = taskContainter.getElementsByTagName("input")[0];
   const taskTxt = the_input.value;
-  const taskObj = new Task(taskTxt);
-  const historyJson = localStorage.getItem("history");
-  let taskHistoryArr;
-  if (historyJson != null) {
-    taskHistoryArr = JSON.parse(historyJson);
-    taskHistoryArr.push(taskObj);
-  } else {
-    taskHistoryArr = [taskObj];
+  if (taskTxt != null && taskTxt != "") {
+    const taskObj = new Task(taskTxt);
+    const historyJson = localStorage.getItem("history");
+    let taskHistoryArr;
+    if (historyJson != null) {
+      taskHistoryArr = JSON.parse(historyJson);
+      taskHistoryArr.push(taskObj);
+    } else {
+      taskHistoryArr = [taskObj];
+    }
+    localStorage.setItem("history", JSON.stringify(taskHistoryArr));
+    //
   }
-  localStorage.setItem("history", JSON.stringify(taskHistoryArr));
-  //
   taskContainter.parentNode.removeChild(taskContainter);
   saveAllTasks();
 }
@@ -158,8 +160,8 @@ function addTask(description, taskElement) {
   // delete button
   const deleteButton = document.createElement("button");
   deleteButton.className = "delete-bt";
-  deleteButton.textContent = "מחק";
-  deleteButton.title = "לחץ למחיקה";
+  deleteButton.textContent = "בוצע";
+  deleteButton.title = "המשימה תועבר לארכיון משימות שבוצעו";
   deleteButton.onclick = function () {
     deleteTask(this);
   };
