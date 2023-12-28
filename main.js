@@ -23,7 +23,7 @@ function saveAllTasks() {
 
 function clearAllTasks() {
   if (confirm("פעולה זאת תמחוק את כל המשימות. להמשיך?")) {
-    let tasks = document.getElementById("to-do-list");
+    let tasks = document.getElementById("todo-list");
     tasks.innerHTML = null;
     localStorage.clear();
   }
@@ -134,12 +134,12 @@ function drop(ev) {
   let elementToDropOn = ev.target.parentNode;
   let position = elementToDrop.compareDocumentPosition(elementToDropOn);
   document
-    .getElementById("to-do-list")
+    .getElementById("todo-list")
     .insertBefore(elementToDrop, elementToDropOn);
 
   if (position == Node.DOCUMENT_POSITION_FOLLOWING) {
     document
-      .getElementById("to-do-list")
+      .getElementById("todo-list")
       .insertBefore(elementToDropOn, elementToDrop);
   }
   saveAllTasks();
@@ -205,7 +205,7 @@ function handleKeyPress(ev) {
       ev.keyCode === 46) &&
     !ev.target.value
   ) {
-    ev.target.parentNode.previousElementSibling.children[1].focus();
+    ev.target.parentNode.previousElementSibling?.children[1].focus();
     let deleteBtn = ev.target.parentNode.getElementsByTagName("button")[0];
     deleteBtn.click();
   }
