@@ -73,7 +73,6 @@ function showHistory() {
       t.date = new Date(t.date);
       let tdTime = document.createElement("td");
       tdTime.innerText = t.date.toLocaleTimeString();
-      console.log(t.date.toLocaleTimeString());
       tdDate.innerText = t.date.toLocaleDateString();
       tr.appendChild(tdDate);
       tr.appendChild(tdTime);
@@ -89,8 +88,10 @@ function showHistory() {
 }
 
 function clearTaskHistory() {
-  localStorage.removeItem("history");
-  document.getElementById("tab-history").innerHTML = null;
+  if (confirm("כל ההיסטוריה תימחק. להמשיך?")) {
+    localStorage.removeItem("history");
+    document.getElementById("tab-history").innerHTML = null;
+  }
 }
 
 function showTasks() {
