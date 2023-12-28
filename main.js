@@ -31,8 +31,71 @@ function clearAllTasks() {
 
 function deleteTask(button) {
   const taskContainter = button.parentNode;
+  // save done task history
+  const the_input = taskContainter.getElementsByTagName("input")[0];
+  const taskTxt = the_input.value;
+  const taskObj = new Task(taskTxt);
+  const historyJson = localStorage.getItem("history");
+  let taskHistoryArr;
+  if (historyJson != null) {
+    taskHistoryArr = JSON.parse(historyJson);
+    taskHistoryArr.push(taskObj);
+  } else {
+    taskHistoryArr = [taskObj];
+  }
+  localStorage.setItem("history", JSON.stringify(taskHistoryArr));
+  //
   taskContainter.parentNode.removeChild(taskContainter);
   saveAllTasks();
+}
+
+class Task {
+  constructor(txt) {
+    this.txt = txt;
+    this.date = new Date();
+  }
+}
+
+function showHistory() {
+  const historyJson = localStorage.getItem("history");
+  if (historyJson != null) {
+    const history = JSON.parse(historyJson);
+    history.sort((t1, t2) => {
+      t1.date - t2.date;
+    });
+    let tBody = document.getElementById("tab-history");
+    tBody.innerHTML = null;
+    history.forEach((t) => {
+      let tr = document.createElement("tr");
+      let tdTask = document.createElement("td");
+      tdTask.innerText = t.txt;
+      let tdDate = document.createElement("td");
+      t.date = new Date(t.date);
+      let tdTime = document.createElement("td");
+      tdTime.innerText = t.date.toLocaleTimeString();
+      console.log(t.date.toLocaleTimeString());
+      tdDate.innerText = t.date.toLocaleDateString();
+      tr.appendChild(tdDate);
+      tr.appendChild(tdTime);
+      tr.appendChild(tdTask);
+      tBody.appendChild(tr);
+    });
+  }
+  // let historyList = document.getElementById("history-list");
+  // historyList.innerHTML = historyJson;
+
+  document.getElementById("show-history").style.display = null;
+  document.getElementById("show-tasks").style.display = "none";
+}
+
+function clearTaskHistory() {
+  localStorage.removeItem("history");
+  document.getElementById("tab-history").innerHTML = null;
+}
+
+function showTasks() {
+  document.getElementById("show-history").style.display = "none";
+  document.getElementById("show-tasks").style.display = null;
 }
 
 function dragStarted(ev) {
@@ -122,7 +185,7 @@ function addTask(description, taskElement) {
   if (taskElement) {
     taskElement.insertAdjacentElement("afterend", newTaskContainter);
   } else {
-    document.getElementById("to-do-list").appendChild(newTaskContainter);
+    document.getElementById("todo-list").appendChild(newTaskContainter);
   }
   newInput.focus();
 }

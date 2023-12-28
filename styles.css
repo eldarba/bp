@@ -5,6 +5,33 @@ body {
   margin: 0;
   padding: 0;
 }
+table,
+tr,
+td,
+th {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+th#th-date {
+  width: 10%;
+  text-align: right;
+  font-size: x-large;
+}
+th#th-time {
+  width: 10%;
+  text-align: right;
+  font-size: x-large;
+}
+th#th-task {
+  width: 80%;
+  text-align: right;
+  font-size: x-large;
+}
 
 section {
   height: 100%;

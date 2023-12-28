@@ -12,9 +12,36 @@
         <h1>תכנית יומית</h1>
       </header>
       <main>
-        <button class="action" onclick="addTask()">הוסף משימה</button>
-        <div id="to-do-list"></div>
-        <button class="action" onclick="clearAllTasks()">מחק הכול</button>
+        <div id="show-history" style="display: none">
+          <button id="bt-show-tasks" class="action" onclick="showTasks()">
+            הצג משימות
+          </button>
+          <div id="history-list">
+            <table>
+              <tr>
+                <th id="th-date">תאריך</th>
+                <th id="th-time">שעה</th>
+                <th id="th-task">משימה</th>
+              </tr>
+              <tbody id="tab-history">
+
+              </tbody>
+            </table>
+
+            <button onclick="clearTaskHistory()">מחק היסטוריה</button>
+          </div>
+        </div>
+        
+        <div id="show-tasks">
+          <button id="bt-add-task" class="action" onclick="addTask()">
+            הוסף משימה
+          </button>
+          <button id="bt-show-history" class="action" onclick="showHistory()">
+            הצג היסטוריה
+          </button>
+          <div id="todo-list"></div>
+          <button class="action" onclick="clearAllTasks()">מחק הכול</button>
+        </div>
       </main>
       <footer>Eldar &copy;</footer>
     </section>
