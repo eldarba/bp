@@ -113,3 +113,8 @@ button.action {
   flex-grow: 1;
   background-color: red;
 }
+
+button {
+  color: black;
+  font-weight: bolder;
+}
