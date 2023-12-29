@@ -129,7 +129,7 @@ input {
     width: 100%;
   }
   div#on-mobile {
-    display: block;
+    display: inline-block;
   }
   div#on-desktop {
     display: none;
@@ -150,17 +150,21 @@ input {
     display: none;
   }
   div#on-desktop {
-    display: block;
+    display: inline-block;
   }
 }
 
-div#on-mobile {
-  position: absolute;
-  left: 20px;
-  top: 15px;
-}
+div#on-mobile,
 div#on-desktop {
   position: absolute;
   left: 20px;
   top: 15px;
+  /* border: 2px solid blue; */
+  background-color: brown;
+  color: coral;
+  padding: 2px;
+  text-align: left;
+}
+div#on-mobile {
+  width: 20%;
 }
