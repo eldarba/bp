@@ -5,38 +5,12 @@ body {
   margin: 0;
   padding: 0;
 }
-table,
-tr,
-td,
-th {
-  border: 1px solid;
-}
 
-table {
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-th#th-date {
-  width: 10%;
-  text-align: right;
-  font-size: x-large;
-}
-th#th-time {
-  width: 10%;
-  text-align: right;
-  font-size: x-large;
-}
-th#th-task {
-  width: 80%;
-  text-align: right;
-  font-size: x-large;
-}
-
+/* Layout */
 section {
   height: 100%;
   border: 1px solid;
-  background-color: black;
+  background-color: darkcyan;
   color: darkgrey;
   box-sizing: border-box;
   display: grid;
@@ -79,6 +53,36 @@ h1 {
   margin: 0;
 }
 
+/* table */
+table,
+tr,
+td,
+th {
+  border: 1px solid;
+}
+
+table {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+th#th-date {
+  width: 10%;
+  text-align: right;
+  font-size: x-large;
+}
+th#th-time {
+  width: 10%;
+  text-align: right;
+  font-size: x-large;
+}
+th#th-task {
+  width: 80%;
+  text-align: right;
+  font-size: x-large;
+}
+
+/* containters */
 .task-container {
   display: flex;
   flex-direction: row;
@@ -104,6 +108,13 @@ button.action {
   background-color: red;
 }
 
+button,
+input {
+  border-radius: 7px;
+}
+
+/* Media Queries for Device responsivenes */
+
 /* Styles for screens with a maximum width of 768 pixels (mobile) */
 @media only screen and (max-width: 768px) {
   div#show-tasks {
@@ -114,14 +125,14 @@ button.action {
   }
 }
 
-/* Styles for screens wider than 768 pixels (browser) */
+/* Styles for screens wider than 768 pixels (desktop browser) */
 @media only screen and (min-width: 769px) {
   div#show-tasks {
-    width: 50%;
+    width: 30%;
     margin: auto;
   }
   div#history-list {
-    width: 50%;
+    width: 30%;
     margin: auto;
   }
 }
