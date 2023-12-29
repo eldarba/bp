@@ -159,7 +159,7 @@ function addTask(description, taskElement) {
 
   // delete button
   const deleteButton = document.createElement("button");
-  deleteButton.className = "delete-bt";
+  deleteButton.className = "done-bt";
   deleteButton.textContent = "בוצע";
   deleteButton.title = "המשימה תועבר לארכיון משימות שבוצעו";
   deleteButton.onclick = function () {
