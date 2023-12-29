@@ -109,7 +109,7 @@ button.done-bt {
   background-color: palegreen;
 }
 
-button.delete-bt{
+button.delete-bt {
   background-color: red;
 }
 
@@ -128,6 +128,12 @@ input {
   div#history-list {
     width: 100%;
   }
+  div#on-mobile {
+    display: block;
+  }
+  div#on-desktop {
+    display: none;
+  }
 }
 
 /* Styles for screens wider than 768 pixels (desktop browser) */
@@ -140,4 +146,21 @@ input {
     width: 30%;
     margin: auto;
   }
+  div#on-mobile {
+    display: none;
+  }
+  div#on-desktop {
+    display: block;
+  }
+}
+
+div#on-mobile {
+  position: absolute;
+  left: 20px;
+  top: 15px;
+}
+div#on-desktop {
+  position: absolute;
+  left: 20px;
+  top: 15px;
 }
