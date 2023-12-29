@@ -164,7 +164,9 @@ div#on-desktop {
   padding: 2px;
   text-align: left;
   font-family: fantasy;
+  font-size: 1rem;
 }
 div#on-mobile {
   width: 20%;
+  height: 5%;
 }
