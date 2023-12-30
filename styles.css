@@ -154,21 +154,21 @@ input {
   }
 }
 
+div#embelm {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border: 1px solid red;
+  width: 25%;
+  height: 10%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 div#on-mobile,
 div#on-desktop {
-  position: absolute;
-  left: 20px;
-  top: 15px;
-  border-radius: 5px;
-  padding: 2px;
-  text-align: left;
-  /* font-family: "Dancing Script", cursive; */
-  /* font-family: "Pacifico", cursive; */
-  /* font-family: "Handlee", cursive; */
   font-family: "Shadows Into Light", cursive;
   font-size: 1rem;
-}
-div#on-mobile {
-  width: 20%;
-  height: 5%;
 }
