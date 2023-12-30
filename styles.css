@@ -82,6 +82,9 @@ th#th-task {
   text-align: right;
   font-size: x-large;
 }
+td {
+  font-size: large;
+}
 
 /* containters */
 .task-container {
@@ -139,11 +142,11 @@ input {
 /* Styles for screens wider than 768 pixels (desktop browser) */
 @media only screen and (min-width: 769px) {
   div#show-tasks {
-    width: 30%;
+    width: 60%;
     margin: auto;
   }
   div#history-list {
-    width: 30%;
+    width: 60%;
     margin: auto;
   }
   div#on-mobile {
@@ -156,12 +159,12 @@ input {
 
 div#embelm {
   position: absolute;
-  left: 2px;
-  top: 2px;
-  border: 1px solid red;
+  left: 0;
+  top: 0;
+  /* border: 1px solid red; */
   width: 25%;
   height: 10%;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   display: flex;
   flex-direction: column;
   justify-content: center;
